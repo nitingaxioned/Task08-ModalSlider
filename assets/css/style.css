@@ -107,10 +107,16 @@ li {
   Header styling starts here
 =================================*/
 
+header .wrapper{
+  text-align: center;
+  background-color: #2b2e37;
+}
 
-
-
-
+header p{
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 0;
+}
 
 /*=================================
   Header styling ends here
@@ -120,30 +126,129 @@ li {
   main styling starts here
 =================================*/
 
+.product-list{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.product-image{
+  width: 18%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  cursor: pointer;
+}
 
 
+.modal{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba( 50,50,50,0.7);
+  z-index: 1;
+}
 
+.close{
+  color: #ffffff;
+  font-size: 35px;
+  position: fixed;
+  top : -50px;
+  right: 0;
+}
 
+.close::after{
+  text-indent: 0;
+  content: "\f00d";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  cursor: pointer;
+}
 
+.slider-control a{
+  position: absolute;
+  text-indent: -9999999px;
+  color: #ffffff;
+}
 
+.slider-control a::after{
+  font-family: "FontAwesome";
+  font-size: 32px;
+  position: fixed;
+  text-indent: 1px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-control a:nth-child(1):after{
+  content: "\f053";
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.slider-control a:nth-child(2):after{
+  content: "\f054";
+  right: 25%;
+  transform: translateX(50%);
+}
+
+.slider-dots{
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+.slider-dot{
+  font-size: 12px;
+  position: relative;
+  margin: 0 1vw;
+  text-indent: -9999999px;
+}
+
+.slider-dot::after{
+  text-indent: 0;
+  position: absolute;
+  font-family: "FontAwesome";
+  content: "\f111";
+  color: #bbbbbb;
+  z-index: 2;
+  left: 0;
+}
+
+.slider-dot:hover::after,
+.active-dot::after{ color: #ffffff; }
+
+.slide{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  transform: translate(-50%,-50%);
+}
+
+.slide-up{  animation: slidePop 0.5s; }
+
+.slide-remove{ 
+  width: 0;
+  transition: all 0.5s;
+ }
+
+@keyframes slidePop {
+  0%{ width: 0; }
+  100%{ width: 20%; }
+}
+
+.hide-me{ display: none; }
 
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
