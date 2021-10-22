@@ -52,6 +52,8 @@ nxtBtn.addEventListener("click", function(){
 
 // Event listners for close btn
 document.querySelector(".close").addEventListener("click",function(){modal.classList.add("hide-me");});
+modal.addEventListener("click",function(){modal.classList.add("hide-me");});
+modal.querySelector("*").addEventListener("click",function(e){ e.stopPropagation() });
 
 // function to change slide
 function setSlide(index){
